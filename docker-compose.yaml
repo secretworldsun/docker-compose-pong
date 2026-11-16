@@ -1,0 +1,22 @@
+services:
+  alpha:
+    build: .
+    image: bpr-pong:1.0
+    container_name: pong-alpha
+    environment:
+      PORT: "8001"
+      RESPONSE: "Привет от Alpha"
+    ports:
+      - "9001:8001"
+    restart: unless-stopped
+
+  beta:
+    build: .
+    image: bpr-pong:1.0
+    container_name: pong-beta
+    environment:
+      PORT: "8002"
+      RESPONSE: "Привет от Beta"
+    ports:
+      - "9002:8002"
+    restart: unless-stopped
